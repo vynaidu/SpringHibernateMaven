@@ -18,7 +18,7 @@ import org.joda.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name="EMP_DETAILS")
 public class Employee {
 
 	@Id
