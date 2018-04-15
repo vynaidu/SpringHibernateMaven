@@ -30,13 +30,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "scp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployTostaging}:/var/lib/tomcat7/webapps"
+                        bat "cp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployTostaging}:/var/lib/tomcat7/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployToprod}:/var/lib/tomcat7/webapps"
+                        sh "cp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployToprod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
