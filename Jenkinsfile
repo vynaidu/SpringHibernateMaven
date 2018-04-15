@@ -9,7 +9,10 @@ pipeline {
     triggers {
          pollSCM('* * * * *')
      }
-
+tools {
+        maven 'localMaven'
+        jdk 'localJDK'
+      }
 stages{
         stage('Build'){
             steps {
