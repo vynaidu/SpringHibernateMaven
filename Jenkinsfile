@@ -36,7 +36,7 @@ stages{
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "cp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployToprod}:/var/lib/tomcat7/webapps"
+                        bat "cp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployToprod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
