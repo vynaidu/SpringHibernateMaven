@@ -30,13 +30,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat ""winscp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployTostaging}:/var/lib/tomcat7/webapps"
+                        bat "winscp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployTostaging}:/var/lib/tomcat7/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        bat ""winscp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployToprod}:/var/lib/tomcat7/webapps"
+                        bat "winscp -i /Users/YarrayyaNaidu/tomcat-demo.pem **/target/*.war ec2-user@${params.deployToprod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
